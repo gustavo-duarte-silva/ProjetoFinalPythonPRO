@@ -12,3 +12,4 @@
 - mainProgram.py: Script principal que executa as funções criadas 
 - myFunction.py: Funções criadas para buscar as URLS apartir de uma url desejada, para assim fornecer as principais recomendações de forma aleatória
 
+Link do Aplicativo no Streamlit: https://gustavo-duarte-silva-projetof-projetofinalpromainprogram-pvusno.streamlitapp.com/
