@@ -12,7 +12,7 @@ class Gustavo:
     for url in list_url:
       try:
         html_page = requests.get(url)
-        soup = BeautifulSoup(html_page, "lxml")
+        soup = BeautifulSoup(html_page, "html5lib")
       except:
         pass
       else:
@@ -35,7 +35,7 @@ class Gustavo:
     while not fila.empty():
       try:
         page_request = requests.get(fila.get())
-        pg = BeautifulSoup(page_request.text, "lxml").find('title')
+        pg = BeautifulSoup(page_request.text, "html5lib").find('title')
         st.write(f'Titulo da Pagina : {pg.text}')
         st.write(f'Link da Pagina : {fila.get()}')
         st.write('---'*9)
