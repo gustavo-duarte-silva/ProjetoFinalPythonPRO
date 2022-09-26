@@ -7,19 +7,13 @@ import random
 import re
 import pytest
 
-
 class Gustavo:
   def Function(list_url):
     for url in list_url:
       try:
-        if re.findall("^http", url):
-          req = Request(url)
-          html_page = urlopen(req)
-          soup = BeautifulSoup(html_page, "lxml")
-        else:
-          req = Request('http://'+url)
-          html_page = urlopen(req)
-          soup = BeautifulSoup(html_page, "lxml")
+        req = Request(url)
+        html_page = urlopen(req)
+        soup = BeautifulSoup(html_page, "lxml")
       except:
         pass
       else:
