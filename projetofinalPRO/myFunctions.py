@@ -2,7 +2,7 @@ import streamlit as st
 from bs4 import BeautifulSoup
 from multiprocessing import Queue
 import requests
-from urllib.request import Request, urlopen
+import requests
 import random
 import re
 import pytest
@@ -11,8 +11,7 @@ class Gustavo:
   def Function(list_url):
     for url in list_url:
       try:
-        req = Request(url)
-        html_page = urlopen(req)
+        html_page = requests.get(url)
         soup = BeautifulSoup(html_page, "lxml")
       except:
         pass
