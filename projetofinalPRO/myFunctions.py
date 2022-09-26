@@ -2,7 +2,7 @@ import streamlit as st
 from bs4 import BeautifulSoup
 from multiprocessing import Queue
 import requests
-import requests
+from urllib.request import Request, urlopen
 import random
 import re
 import pytest
@@ -11,8 +11,13 @@ class Gustavo:
   def Function(list_url):
     for url in list_url:
       try:
-        html_page = requests.get(url)
-        soup = BeautifulSoup(html_page, "html5lib")
+        if re.findall("^http", url):
+          html_page = requests.get(url)
+          soup = BeautifulSoup(html_page, "html5lib")
+        else:
+          req = Request('http://'+url)
+          html_page = urlopen(req)
+          soup = BeautifulSoup(html_page, "html5lib")
       except:
         pass
       else:
@@ -35,7 +40,7 @@ class Gustavo:
     while not fila.empty():
       try:
         page_request = requests.get(fila.get())
-        pg = BeautifulSoup(page_request.text, "html5lib").find('title')
+        pg = BeautifulSoup(page_request.text, "lxml").find('title')
         st.write(f'Titulo da Pagina : {pg.text}')
         st.write(f'Link da Pagina : {fila.get()}')
         st.write('---'*9)
