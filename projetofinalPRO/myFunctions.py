@@ -33,7 +33,6 @@ class Gustavo:
     else:
       return []
           
-
   def Recomendacao(lista):
     lista_final = random.choices(lista, k=20)
     fila = Queue()
