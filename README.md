@@ -7,6 +7,7 @@
 - Foi utilizado para o desenvolvimento Web: Streamlit
 - Scripts obteve sucesso no Pytest
 - Docstring Scanapi Gerado com Sucesso!
+- LOCAL_1 e LOCAL_2 são imagens da aplicação rodando em ambiente local(localhost).
 
 ### Scripts:
 - mainProgram.py: Script principal que executa as funções criadas 
