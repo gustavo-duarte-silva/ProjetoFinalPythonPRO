@@ -33,10 +33,22 @@ def buscar_url():
             data_4 = Gustavo.Function(data_3)
             data_5 = Gustavo.Function(data_4)
             data_6 = Gustavo.Function(data_5)
+            if type(data_1) is None:
+                data_1 = [url]
+            if type(data_2) is None:
+                data_2 = [url]
+            if type(data_3) is None:
+                data_3 = [url]
+            if type(data_4) is None:
+                data_4 = [url]
+            if type(data_5) is None:
+                data_5 = [url]
+            if type(data_6) is None:
+                data_6 = [url]
             final = data_1 + data_2 + data_3 + data_4 + data_5 + data_6
             Gustavo.Recomendacao(final)
         except:
-            st.error('Digite uma URL Valida')
+            st.error('Digite um URL Valida!!!')
 
 paginas= {"Pagina Inicial": main_page, "Descrição do Projeto": descricao_projeto, "Buscar URL": buscar_url}
 
