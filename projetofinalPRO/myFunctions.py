@@ -13,7 +13,7 @@ class Gustavo:
         try:
           req = Request(url)
           html_page = urlopen(req)
-          soup = BeautifulSoup(html_page, "lxml")
+          soup = BeautifulSoup(html_page, "html.parser")
         except:
           continue
         else:
